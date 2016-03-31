@@ -1,0 +1,29 @@
+elems:
+
+  - src: elems/xresources/main$
+    dst: /etc/X11/xinit/Xresources
+    only:
+      features:
+        - xorg
+
+  - src: elems/xresources/colorschemes/(.+)$
+    dst: <%= get_var! :"x11.xresources.custom_dir", type: :directory %>/colorschemes/<1>
+    only:
+      features:
+        - xorg
+
+  - src: elems/(xorg\.conf\.d/[0-9]+-apple\.conf)$
+    dst: /etc/X11/<1>
+    only:
+      features:
+        - xorg
+        - macbook
+
+  - src: elems/(xorg\.conf\.d/[0-9]+-wacom\.conf)$
+    dst: /etc/X11/<1>
+    only:
+      features:
+        - xorg
+        - wacom
+
+# vim: set filetype=eruby.yaml :

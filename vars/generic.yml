@@ -1,0 +1,6 @@
+xorg:
+  xresources:
+    custom_dir: /etc/X11/xinit/Xresources.d
+
+features:
+  - xorg

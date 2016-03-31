@@ -1,0 +1,17 @@
+# => inherits: generic, wacom, with-urxvt <= #
+
+xorg:
+  main_video_card:
+    driver:      intel
+    vbe_restore: true
+
+fonts:
+  main:
+    name: PragmataPro
+    size: 13
+
+urxvt:
+  url_launcher: chromium
+
+colorscheme:
+  name: jellybeans

@@ -1,0 +1,73 @@
+# ─────────────────────────────────────────────────────────────────────────────┐
+#                                                                              │
+# File informations:                                                           │
+# - Name:    elems/xorg.conf.d/20-apple.conf.tt                                │
+# - Summary: Configuration for Apple devices.                                  │
+# - Authors:                                                                   │
+#   - Alessandro Molari <molari.alessandro@gmail.com> (alem0lars)              │
+#                                                                              │
+# Project informations:                                                        │
+#   - Homepage:        https://github.com/alem0lars/configs-xorg               │
+#   - Getting started: see README.md in the project root folder                │
+#                                                                              │
+# License: Apache v2.0 (see below)                                             │
+#                                                                              │
+# ─────────────────────────────────────────────────────────────────────────────┤
+#                                                                              │
+# Licensed to the Apache Software Foundation (ASF) under one more contributor  │
+# license agreements.  See the NOTICE file distributed with this work for      │
+# additional information regarding copyright ownership. The ASF licenses this  │
+# file to you under the Apache License, Version 2.0 (the "License"); you may   │
+# not use this file except in compliance with the License.                     │
+# You may obtain a copy of the License at                                      │
+#                                                                              │
+#   http://www.apache.org/licenses/LICENSE-2.0                                 │
+#                                                                              │
+# Unless required by applicable law or agreed to in writing, software          │
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT    │
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.             │
+# See the License for the specific language governing permissions and          │
+# limitations under the License.                                               │
+#                                                                              │
+# ─────────────────────────────────────────────────────────────────────────────┘
+
+# MacBookPro built-in touchpad.
+Section "InputClass"
+  MatchIsTouchpad "true"
+  Identifier      "Touchpads"
+  Driver          "mtrack"
+  MatchProduct    "Apple|bcm5974"
+
+  Option "Sensitivity" "0.95"
+
+  Option "FingerHigh" "12"
+  Option "FingerLow"  "1"
+
+  Option "IgnoreThumb" "true"
+  Option "IgnorePalm"  "true"
+
+  Option "ButtonMoveEmulate" "false"
+  Option "ButtonIntegrated"  "true"
+
+  Option "TapButton1" "0"
+  Option "TapButton2" "0"
+  Option "TapButton3" "0"
+  Option "TapButton4" "0"
+
+  Option "ClickFinger1" "1"
+  Option "ClickFinger2" "3"
+  Option "ClickFinger3" "3"
+
+  Option "SwipeLeftButton"  "8"
+  Option "SwipeRightButton" "9"
+  Option "SwipeUpButton"    "0"
+  Option "SwipeDownButton"  "0"
+  Option "ScrollUpButton"   "5"
+  Option "ScrollDownButton" "4"
+
+  Option "ClickTime"      "25"
+  Option "BottomEdge"     "25"
+  Option "ScrollDistance" "75"
+EndSection
+
+# vim: set filetype=eruby.xf86conf :
