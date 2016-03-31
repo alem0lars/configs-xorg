@@ -31,17 +31,19 @@
 #                                                                              │
 # ─────────────────────────────────────────────────────────────────────────────┤
 <% define_locals do
-  variable "xorg.main_video_card.driver",      type: :string
-  variable "xorg.main_video_card.vbe_restore", type: :bool?
+  prefixed(:"xorg.main_video_card.") do
+    variable :driver,      type: :string
+    variable :vbe_restore, type: :bool?
+  end
 end -%>
 # ─────────────────────────────────────────────────────────────────────────────┘
 
 Section "Device" # Main video card.
   Identifier "Generic Video Card"
-  Driver     "<%= local! "xorg.main_video_card.driver" %>"
+  Driver     "<%= local! :driver %>"
 
-  <% local?("xorg.main_video_card.vbe_restore") do |vbe_restore| %>
-  Option "VBERestore" "<%= vbe_restore %>"
+  <% if local? :vbe_restore %>
+  Option "VBERestore" "<%= local! :vbe_restore %>"
   <% end -%>
 EndSection
 

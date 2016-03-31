@@ -6,7 +6,7 @@ elems:
       features:
         - xorg
 
-  - src: 'elems/xresources/colorschemes/(.+)$'
+  - src: elems/xresources/colorschemes/(.+)$
     dst: '<%= get_var! :"xorg.xresources.custom_dir", type: :directory %>/colorschemes/<1>'
     only:
       features:

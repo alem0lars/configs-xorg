@@ -31,7 +31,8 @@
 #                                                                              │
 # ─────────────────────────────────────────────────────────────────────────────┘
 
-Section "InputClass" # Wacom touchpads.
+# Wacom touchpads.
+Section "InputClass"
   Identifier      "Wacom Class"
   MatchProduct    "Wacom|WACOM"
   MatchDevicePath "/dev/input/event*"

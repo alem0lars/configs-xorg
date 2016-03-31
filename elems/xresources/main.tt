@@ -33,15 +33,16 @@
 ! ─────────────────────────────────────────────────────────────────────────────┤
 <% define_locals do
   variable :dpi,                          type: :integer?
-  variable :"colorscheme.name",           type: :string?
-  variable :"xorg.xresources.custom_dir", type: :directory?
+  variable :"colorscheme.name",           type: :string?, as: :colorscheme_name
+  variable :"xorg.xresources.custom_dir", type: :directory?, as: :custom_dir
   variable :"fonts.main.name",            type: :string, as: :font_name
   variable :"fonts.main.size",            type: :string, as: :font_size
-  variable :"urxvt.url_launcher",         type: :file?
+  variable :"urxvt.url_launcher",         type: :file?, as: :urxvt_url_launcher
 
   computed(:colorscheme_path) do
-    local?(:"xorg.xresources.custom_dir", :"colorscheme.name") do |dir, name|
-      dir.join("colorschemes", "#{name}.xresources")
+    if local? :custom_dir, :colorscheme_name
+      local!(:custom_dir).join("colorschemes",
+                               "#{local!(:colorscheme_name)}.xresources")
     end
   end
   computed(:xft_font) do
@@ -53,8 +54,8 @@ end -%>
 # ┌────────────────────────────────────────────────────────────────────────────┐
 # ├→ Xft ──────────────────────────────────────────────────────────────────────┤
 
-<% local?(:dpi) do |dpi| %>
-Xft.dpi: <%= dpi %>
+<% if local? :dpi %>
+Xft.dpi: <%= local! :dpi %>
 <% end -%>
 Xft.antialias: true
 Xft.autohint:  true
@@ -66,8 +67,8 @@ Xft.rgba:      rgb
 # ├────────────────────────────────────────────────────────────────────────────┤
 # ├→ Colors ───────────────────────────────────────────────────────────────────┤
 
-<% local?(:"colorscheme.path") do |path| %>
-#include "<%= path %>"
+<% if local? :colorscheme_path %>
+#include "<%= local! :colorscheme_path %>"
 <% end -%>
 
 # ├────────────────────────────────────────────────────────────────────────────┤
@@ -163,8 +164,8 @@ urxvt.keysym.M-s:      perl:keyboard-select:search
 
 ! Extension `url-select`.
 urxvt.keysym.M-u:           perl:url-select:select_next
-urxvt.urlLauncher:          <%= local! :"urxvt.url_launcher" %>
-urxvt.url-select.launcher:  <%= local! :"urxvt.url_launcher" %>
+urxvt.urlLauncher:          <%= local! :urxvt_url_launcher %>
+urxvt.url-select.launcher:  <%= local! :urxvt_url_launcher %>
 urxvt.url-select.underline: true
 urxvt.url-select.button:    1
 urxvt.url-select.autocopy:  false
