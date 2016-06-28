@@ -1,4 +1,4 @@
-# => inherits: generic, wacom, with-urxvt <= #
+# => inherits: generic, system-level, wacom, with-urxvt <= #
 
 xorg:
   main_video_card:
