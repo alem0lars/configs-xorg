@@ -1,7 +1,7 @@
 elems:
 
   - src: elems/xresources/main$
-    dst: /etc/X11/xinit/Xresources
+    dst: '<%= get_var! :"xorg.xresources.main" %>'
     only:
       features:
         - xorg
