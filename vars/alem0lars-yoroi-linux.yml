@@ -1,0 +1,12 @@
+# => inherits: generic, user-level, with-urxvt <= #
+
+fonts:
+  main:
+    name: Hack
+    size: 11
+
+urxvt:
+  url_launcher: chromium
+
+colorscheme:
+  name: jellybeans
