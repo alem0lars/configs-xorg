@@ -1,0 +1,4 @@
+xorg:
+  xresources:
+    custom_dir: ~/.Xresources.d
+    main: ~/.Xresources
