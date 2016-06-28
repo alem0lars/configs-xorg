@@ -37,7 +37,7 @@
   variable :"xorg.xresources.custom_dir", type: :directory?, as: :custom_dir
   variable :"fonts.main.name",            type: :string, as: :font_name
   variable :"fonts.main.size",            type: :string, as: :font_size
-  variable :"urxvt.url_launcher",         type: :file?, as: :urxvt_url_launcher
+  variable :"urxvt.url_launcher",         type: :string?, as: :urxvt_url_launcher
 
   computed(:colorscheme_path) do
     if local? :custom_dir, :colorscheme_name
