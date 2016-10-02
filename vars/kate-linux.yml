@@ -7,8 +7,8 @@ xorg:
 
 fonts:
   main:
-    name: PragmataPro
-    size: 13
+    name: Hack
+    size: 11
 
 urxvt:
   url_launcher: chromium
