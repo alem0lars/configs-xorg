@@ -2,8 +2,7 @@
 
 xorg:
   main_video_card:
-    driver:      intel
-    vbe_restore: true
+    driver: nvidia
 
 fonts:
   main:
