@@ -1,8 +1,9 @@
 # => inherits: generic, system-level, wacom, with-urxvt <= #
 
+
 xorg:
   main_video_card:
-    driver: nvidia
+    driver: intel
 
 fonts:
   main:
@@ -14,3 +15,6 @@ urxvt:
 
 colorscheme:
   name: jellybeans
+
+
+# vim: set filetype=eruby.yaml :
