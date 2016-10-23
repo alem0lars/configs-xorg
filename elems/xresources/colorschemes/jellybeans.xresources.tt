@@ -31,6 +31,7 @@
 !                                                                              │
 ! ─────────────────────────────────────────────────────────────────────────────┘
 
+
 ! Backgrond & Foreground.
 *background: #151515
 *foreground: #888888
@@ -52,8 +53,8 @@
 *color11: #FAD07A
 
 ! Blue.
-*color4:  #667899
-*color12: #8197BF
+*color4:  #5771A0
+*color12: #395587
 
 ! Magenta.
 *color5:  #8787AF
@@ -66,5 +67,6 @@
 ! White.
 *color7:  #888888
 *color15: #E8E8D3
+
 
 ! vim: set filetype=eruby.xdefaults :
