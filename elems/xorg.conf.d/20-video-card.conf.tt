@@ -35,7 +35,7 @@
     variable :driver,      type: :string
     variable :vbe_restore, type: :bool?
   end
-end -%>
+end %>
 # ─────────────────────────────────────────────────────────────────────────────┘
 
 Section "Device" # Main video card.
@@ -44,7 +44,7 @@ Section "Device" # Main video card.
 
   <% if local? :vbe_restore %>
   Option "VBERestore" "<%= local! :vbe_restore %>"
-  <% end -%>
+  <% end %>
 EndSection
 
 # vim: set filetype=eruby.xf86conf :

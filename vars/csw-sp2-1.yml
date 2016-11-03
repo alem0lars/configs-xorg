@@ -1,5 +1,6 @@
 # => inherits: generic, user-level, with-urxvt <= #
 
+
 fonts:
   main:
     name: Hack
@@ -10,3 +11,6 @@ urxvt:
 
 colorscheme:
   name: jellybeans
+
+
+# vim: set filetype=eruby.yaml :
