@@ -4,10 +4,10 @@
 fonts:
   main:
     name: Hack
-    size: 11
+    size: 9
 
 urxvt:
-  url_launcher: chromium
+  url_launcher: chromium-browser
 
 colorscheme:
   name: jellybeans
