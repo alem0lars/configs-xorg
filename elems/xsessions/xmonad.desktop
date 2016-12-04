@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xmonad
+Comment=A lightweight window manager
+TryExec=xmonad
+Exec=/etc/X11/Sessions/xmonad
+Type=Application
+
+
+# vim: set filetype=eruby.desktop :

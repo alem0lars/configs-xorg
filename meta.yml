@@ -1,5 +1,15 @@
 elems:
 
+  - src:   ^(xsessions)/(.+\.desktop)$
+    dst:   /usr/share/<1>/<2>
+    perms: 755
+    only:  f?xorg
+
+  - src:   ^xsessions/((?!.*\.desktop).+)$
+    dst:   /etc/X11/Sessions/<1>
+    perms: 755
+    only:  f?xorg
+
   - src: ^xresources/main$
     dst: '<%= get_var! :"xorg.xresources.main" %>'
     only: f?xorg
