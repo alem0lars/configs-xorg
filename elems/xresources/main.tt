@@ -51,9 +51,8 @@
 end -%>
 ! ─────────────────────────────────────────────────────────────────────────────┘
 
-# ┌────────────────────────────────────────────────────────────────────────────┐
-# ├→ Xft ──────────────────────────────────────────────────────────────────────┤
 
+! ────────────────────────────────────────────────────────────────────── Xft ──┐
 <% if local? :dpi %>
 Xft.dpi: <%= local! :dpi %>
 <% end -%>
@@ -63,24 +62,15 @@ Xft.hinting:   true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba:      rgb
-
-# ├────────────────────────────────────────────────────────────────────────────┤
-# ├→ Colors ───────────────────────────────────────────────────────────────────┤
-
+! ─────────────────────────────────────────────────────────────────── Colors ──┤
 <% if local? :colorscheme_path %>
 #include "<%= local! :colorscheme_path %>"
 <% end -%>
-
-# ├────────────────────────────────────────────────────────────────────────────┤
-# ├→ Cross-terminal settings ──────────────────────────────────────────────────┤
-
+! ────────────────────────────────────────────────── Cross-terminal settings ──┤
 *saveLines:    65536
 *cursorBlink:  false
 *bellIsUrgent: true
-
-# ├────────────────────────────────────────────────────────────────────────────┤
-# ├→ XTerm ────────────────────────────────────────────────────────────────────┤
-
+! ──────────────────────────────────────────────────────────────────── xterm ──┤
 xterm*faceName:          <%= local! :xft_font %>
 xterm*utf8:              2
 xterm*colorMode:         true
@@ -92,37 +82,27 @@ xterm*jumpScroll:        true
 xterm*multiScroll:       true
 xterm*selectToClipboard: true
 xterm*toolBar:           false
-
-# ├────────────────────────────────────────────────────────────────────────────┤
-# ├→ URXVT ────────────────────────────────────────────────────────────────────┤
-
+! ──────────────────────────────────────────────────────────────────── urxvt ──┤
 <% if has_feature? :urxvt %>
-
 ! Terminal informations.
 urxvt*termName:       rxvt-256color
 urxvt*iso14755_52:    false
 urxvt.matcher.button: 1
 urxvt.cutchars:       ()*,<>[]{}|`""''
-
 ! URLs style.
 urxvt.underlineURLs: true
-
 ! Pseudo-transparency.
 urxvt*shading:     50
 urxvt*transparent: false
-
 ! Font.
 urxvt*font:           <%= local! :xft_font %>
 urxvt*boldFont:       <%= local! :xft_font %>
 urxvt*italicFont:     <%= local! :xft_font %>
 urxvt*boldItalicFont: <%= local! :xft_font %>
-
 ! Scrollbar.
 urxvt.scrollBar: false
-
 ! Load extensions.
 urxvt.perl-ext-common: default,clipboard,matcher,keyboard-select,url-select
-
 ! Keys mapping.
 urxvt.keysym.Home:        \033[H
 urxvt.keysym.End:         \033[F
@@ -150,18 +130,15 @@ urxvt.keysym.C-Up:        \033[1;5A
 urxvt.keysym.C-Down:      \033[1;5B
 urxvt.keysym.C-Right:     \033[1;5C
 urxvt.keysym.C-Left:      \033[1;5D
-
 ! Clipboard.
 urxvt.keysym.M-c:         perl:clipboard:copy
 urxvt.keysym.M-v:         perl:clipboard:paste
 urxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
 urxvt.clipboard.copycmd:  xclip -i -selection clipboard
 urxvt.clipboard.pastecmd: xclip -o -selection clipboard
-
 ! Extension `keyboard-select`.
 urxvt.keysym.M-Escape: perl:keyboard-select:activate
 urxvt.keysym.M-s:      perl:keyboard-select:search
-
 ! Extension `url-select`.
 urxvt.keysym.M-u:           perl:url-select:select_next
 urxvt.urlLauncher:          <%= local! :urxvt_url_launcher %>
@@ -169,15 +146,13 @@ urxvt.url-select.launcher:  <%= local! :urxvt_url_launcher %>
 urxvt.url-select.underline: true
 urxvt.url-select.button:    1
 urxvt.url-select.autocopy:  false
-
 ! Extension `font-size` (https://github.com/majutsushi/urxvt-font-size).
 urxvt.keysym.C-M-Up:   font-size:increase
 urxvt.keysym.C-M-Down: font-size:decrease
 urxvt.keysym.C-S-Up:   font-size:incglobal
 urxvt.keysym.C-S-Down: font-size:decglobal
+<% end %>
+! ─────────────────────────────────────────────────────────────────────────────┘
 
-<% end -%>
 
-# ─────────────────────────────────────────────────────────────────────────────┘
-
-# vim: set filetype=eruby.xdefaults :
+! vim: set filetype=eruby.xdefaults :
