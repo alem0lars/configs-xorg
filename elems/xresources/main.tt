@@ -48,20 +48,20 @@
   computed(:xft_font) do
     "xft:#{local!(:font_name).gsub(" ", '\ ')}:size=#{local!(:font_size)}"
   end
-end -%>
+end %>
 ! ─────────────────────────────────────────────────────────────────────────────┘
 
 
 ! ────────────────────────────────────────────────────────────────────── Xft ──┐
 <% if local? :dpi %>
-Xft.dpi: <%= local! :dpi %>
+Xft*dpi: <%= local! :dpi %>
 <% end -%>
-Xft.antialias: true
-Xft.autohint:  true
-Xft.hinting:   true
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcddefault
-Xft.rgba:      rgb
+Xft*antialias: true
+Xft*autohint:  true
+Xft*hinting:   true
+Xft*hintstyle: hintfull
+Xft*lcdfilter: lcddefault
+Xft*rgba:      rgb
 ! ─────────────────────────────────────────────────────────────────── Colors ──┤
 <% if local? :colorscheme_path %>
 #include "<%= local! :colorscheme_path %>"
@@ -87,8 +87,8 @@ xterm*toolBar:           false
 ! Terminal informations.
 urxvt*termName:       rxvt-256color
 urxvt*iso14755_52:    false
-urxvt.matcher.button: 1
-urxvt.cutchars:       ()*,<>[]{}|`""''
+urxvt*matcher.button: 1
+urxvt*cutchars:       ()*,<>[]{}|`""''
 ! URLs style.
 urxvt.underlineURLs: true
 ! Pseudo-transparency.
@@ -100,58 +100,75 @@ urxvt*boldFont:       <%= local! :xft_font %>
 urxvt*italicFont:     <%= local! :xft_font %>
 urxvt*boldItalicFont: <%= local! :xft_font %>
 ! Scrollbar.
-urxvt.scrollBar: false
+urxvt*scrollBar: false
 ! Load extensions.
-urxvt.perl-ext-common: default,clipboard,matcher,keyboard-select,url-select
+urxvt*perl-ext-common: default,clipboard,matcher,keyboard-select,url-select,font-size
 ! Keys mapping.
-urxvt.keysym.Home:        \033[H
-urxvt.keysym.End:         \033[F
-urxvt.keysym.S-Up:        \033[1;2A
-urxvt.keysym.S-Down:      \033[1;2B
-urxvt.keysym.S-Right:     \033[1;2C
-urxvt.keysym.S-Left:      \033[1;2D
-urxvt.keysym.S-Home:      \033[1;2H
-urxvt.keysym.S-End:       \033[1;2F
-urxvt.keysym.M-Up:        \033[1;3A
-urxvt.keysym.M-Down:      \033[1;3B
-urxvt.keysym.M-Right:     \033[1;3C
-urxvt.keysym.M-Left:      \033[1;3D
-urxvt.keysym.M-Page_Up:   \033[5;3~
-urxvt.keysym.M-Page_Down: \033[6;3~
-urxvt.keysym.M-Home:      \033[1;3H
-urxvt.keysym.M-End:       \033[1;3F
-urxvt.keysym.M-S-Up:      \033[1;4A
-urxvt.keysym.M-S-Down:    \033[1;4B
-urxvt.keysym.M-S-Right:   \033[1;4C
-urxvt.keysym.M-S-Left:    \033[1;4D
-urxvt.keysym.M-S-Home:    \033[1;4H
-urxvt.keysym.M-S-End:     \033[1;4F
-urxvt.keysym.C-Up:        \033[1;5A
-urxvt.keysym.C-Down:      \033[1;5B
-urxvt.keysym.C-Right:     \033[1;5C
-urxvt.keysym.C-Left:      \033[1;5D
+urxvt*keysym*Home:        \033[H
+urxvt*keysym*End:         \033[F
+urxvt*keysym*S-Up:        \033[1;2A
+urxvt*keysym*S-Down:      \033[1;2B
+urxvt*keysym*S-Right:     \033[1;2C
+urxvt*keysym*S-Left:      \033[1;2D
+urxvt*keysym*S-Home:      \033[1;2H
+urxvt*keysym*S-End:       \033[1;2F
+urxvt*keysym*M-Up:        \033[1;3A
+urxvt*keysym*M-Down:      \033[1;3B
+urxvt*keysym*M-Right:     \033[1;3C
+urxvt*keysym*M-Left:      \033[1;3D
+urxvt*keysym*M-Page_Up:   \033[5;3~
+urxvt*keysym*M-Page_Down: \033[6;3~
+urxvt*keysym*M-Home:      \033[1;3H
+urxvt*keysym*M-End:       \033[1;3F
+urxvt*keysym*M-S-Up:      \033[1;4A
+urxvt*keysym*M-S-Down:    \033[1;4B
+urxvt*keysym*M-S-Right:   \033[1;4C
+urxvt*keysym*M-S-Left:    \033[1;4D
+urxvt*keysym*M-S-Home:    \033[1;4H
+urxvt*keysym*M-S-End:     \033[1;4F
+urxvt*keysym*C-Up:        \033[1;5A
+urxvt*keysym*C-Down:      \033[1;5B
+urxvt*keysym*C-Right:     \033[1;5C
+urxvt*keysym*C-Left:      \033[1;5D
 ! Clipboard.
-urxvt.keysym.M-c:         perl:clipboard:copy
-urxvt.keysym.M-v:         perl:clipboard:paste
-urxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
-urxvt.clipboard.copycmd:  xclip -i -selection clipboard
-urxvt.clipboard.pastecmd: xclip -o -selection clipboard
+urxvt*keysym*M-c:         perl:clipboard:copy
+urxvt*keysym*M-v:         perl:clipboard:paste
+urxvt*keysym*M-C-v:       perl:clipboard:paste_escaped
+urxvt*clipboard*copycmd:  xclip -i -selection clipboard
+urxvt*clipboard*pastecmd: xclip -o -selection clipboard
 ! Extension `keyboard-select`.
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.M-s:      perl:keyboard-select:search
+urxvt*keysym*M-Escape: perl:keyboard-select:activate
+urxvt*keysym*M-s:      perl:keyboard-select:search
 ! Extension `url-select`.
-urxvt.keysym.M-u:           perl:url-select:select_next
-urxvt.urlLauncher:          <%= local! :urxvt_url_launcher %>
-urxvt.url-select.launcher:  <%= local! :urxvt_url_launcher %>
-urxvt.url-select.underline: true
-urxvt.url-select.button:    1
-urxvt.url-select.autocopy:  false
+urxvt*keysym*M-u:           perl:url-select:select_next
+urxvt*urlLauncher:          <%= local! :urxvt_url_launcher %>
+urxvt*url-select*launcher:  <%= local! :urxvt_url_launcher %>
+urxvt*url-select*underline: true
+urxvt*url-select*button:    1
+urxvt*url-select*autocopy:  false
 ! Extension `font-size` (https://github.com/majutsushi/urxvt-font-size).
-urxvt.keysym.C-M-Up:   font-size:increase
-urxvt.keysym.C-M-Down: font-size:decrease
-urxvt.keysym.C-S-Up:   font-size:incglobal
-urxvt.keysym.C-S-Down: font-size:decglobal
+urxvt*keysym*C-M-Up:   font-size:increase
+urxvt*keysym*C-M-Down: font-size:decrease
+urxvt*keysym*C-S-Up:   font-size:incglobal
+urxvt*keysym*C-S-Down: font-size:decglobal
 <% end %>
+! ───────────────────────────────────────────────────────────────── xmessage ──┤
+Xmessage*font: -*-Hack-*-*-*-*-*-*-*-*-*-*-*-*
+
+Xmessage*center: true
+
+Xmessage*Form*okay*foreground:    #799D6A
+Xmessage*Form*cancel*foreground:  #B85335
+Xmessage*Form*?*foreground:       #668799
+Xmessage*background:              #151515
+Xmessage*foreground:              #888888
+
+Xmessage*defaultButton:       okay
+
+Xmessage*international: true
+
+Xmessage*Scrollbar:           WhenNeeded
+Xmessage*form*message*Scroll: WhenNeeded
 ! ─────────────────────────────────────────────────────────────────────────────┘
 
 
