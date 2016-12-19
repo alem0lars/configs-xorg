@@ -1,0 +1,20 @@
+# => inherits: generic, system-level, with-urxvt <= #
+
+
+xorg:
+  main_video_card:
+    driver: intel
+
+fonts:
+  main:
+    name: Hack
+    size: 11
+
+urxvt:
+  url_launcher: chromium
+
+colorscheme:
+  name: jellybeans
+
+
+# vim: set filetype=eruby.yaml :
