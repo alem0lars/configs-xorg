@@ -138,7 +138,7 @@ urxvt*clipboard*copycmd:  xclip -i -selection clipboard
 urxvt*clipboard*pastecmd: xclip -o -selection clipboard
 ! Extension `keyboard-select`.
 urxvt*keysym*M-Escape: perl:keyboard-select:activate
-urxvt*keysym*M-s:      perl:keyboard-select:search
+urxvt*keysym*M-slash:  perl:keyboard-select:search
 ! Extension `url-select`.
 urxvt*keysym*M-u:           perl:url-select:select_next
 urxvt*urlLauncher:          <%= local! :urxvt_url_launcher %>
@@ -168,5 +168,3 @@ Xmessage*defaultButton:       okay
 Xmessage*international: true
 ! ─────────────────────────────────────────────────────────────────────────────┘
 
-
-! vim: set filetype=eruby.xdefaults :
