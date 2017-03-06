@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # redirect errors to a file in user's home directory if we can
-for errfile in "$HOME/.xmonad-errors" "${TMPDIR-/tmp}/xmonad-$USER" "/tmp/xmonad-$USER"
+for errfile in "$HOME/.awesome-errors" "${TMPDIR-/tmp}/awesome-$USER" "/tmp/awesome-$USER"
 do
   if ( cp /dev/null "$errfile" 2> /dev/null )
   then
