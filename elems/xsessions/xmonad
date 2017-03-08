@@ -1,19 +1,19 @@
 #!/bin/sh
 
 # redirect errors to a file in user's home directory if we can
-for errfile in "$HOME/.awesome-errors" "${TMPDIR-/tmp}/awesome-$USER" "/tmp/awesome-$USER"
+for errfile in "$HOME/.xmonad-errors" "${TMPDIR-/tmp}/xmonad-${USER}" "/tmp/xmonad-${USER}"
 do
   if ( cp /dev/null "$errfile" 2> /dev/null )
   then
-    chmod 600 "$errfile"
-    exec > "$errfile" 2>&1
+    chmod 600 "${errfile}"
+    exec > "${errfile}" 2>&1
     break
   fi
 done
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-userxkbmap=$HOME/.Xkbmap
+userresources="${HOME}/.Xresources"
+usermodmap="${HOME}/.Xmodmap"
+userxkbmap="${HOME}/.Xkbmap"
 
 sysresources=/etc/X11/Xresources
 sysmodmap=/etc/X11/Xmodmap
@@ -24,26 +24,26 @@ rh6sysmodmap=/etc/X11/xinit/Xmodmap
 
 
 # merge in defaults
-if [ -f "$rh6sysresources" ]; then
-    xrdb -merge "$rh6sysresources"
+if [ -f "${rh6sysresources}" ]; then
+    xrdb -merge "${rh6sysresources}"
 fi
 
-if [ -f "$sysresources" ]; then
-    xrdb -merge "$sysresources"
+if [ -f "${sysresources}" ]; then
+    xrdb -merge "${sysresources}"
 fi
 
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+if [ -f "${userresources}" ]; then
+    xrdb -merge "${userresources}"
 fi
 
 # merge in keymaps
-if [ -f "$sysxkbmap" ]; then
-    setxkbmap `cat "$sysxkbmap"`
+if [ -f "${sysxkbmap}" ]; then
+    setxkbmap `cat "${sysxkbmap}"`
     XKB_IN_USE=yes
 fi
 
 if [ -f "$userxkbmap" ]; then
-    setxkbmap `cat "$userxkbmap"`
+    setxkbmap `cat "${userxkbmap}"`
     XKB_IN_USE=yes
 fi
 
@@ -77,7 +77,7 @@ fi
 
 unset XKB_IN_USE
 
-# run all system xinitrc shell scripts.
+# Run all system xinitrc shell scripts.
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for i in /etc/X11/xinit/xinitrc.d/* ; do
         if [ -x "$i" ]; then
