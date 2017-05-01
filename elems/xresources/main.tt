@@ -67,12 +67,13 @@ Xft*rgba:      rgb
 #include "<%= local! :colorscheme_path %>"
 <% end -%>
 ! ────────────────────────────────────────────────────────────────── Xcursor ──┤
+xcursor.theme: pearlgrey
 <% if !local?(:dpi) || local!(:dpi) < 100 %>
-Xcursor*size: 24
+xcursor.size: 24
 <% elsif local!(:dpi) < 180 %>
-Xcursor*size: 32
+xcursor.size: 32
 <% else %>
-Xcursor*size: 48
+xcursor.size: 48
 <% end %>
 ! ────────────────────────────────────────────────── Cross-terminal settings ──┤
 *saveLines:    65536

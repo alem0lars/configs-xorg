@@ -1,0 +1,6 @@
+xorg:
+  main_video_card:
+    driver: intel
+
+
+# vim: set filetype=eruby.yaml :
