@@ -1,6 +1,8 @@
 # => inherits: generic, system-level, wacom, with-urxvt <= #
 
 
+dpi: 192
+
 xorg:
   main_video_card:
     driver: intel
@@ -8,7 +10,7 @@ xorg:
 fonts:
   main:
     name: Hack
-    size: 11
+    size: 10
 
 urxvt:
   url_launcher: firefox

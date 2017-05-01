@@ -66,10 +66,18 @@ Xft*rgba:      rgb
 <% if local? :colorscheme_path %>
 #include "<%= local! :colorscheme_path %>"
 <% end -%>
+! ────────────────────────────────────────────────────────────────── Xcursor ──┤
+<% if !local?(:dpi) || local!(:dpi) < 100 %>
+Xcursor*size: 24
+<% elsif local!(:dpi) < 180 %>
+Xcursor*size: 32
+<% else %>
+Xcursor*size: 48
+<% end %>
 ! ────────────────────────────────────────────────── Cross-terminal settings ──┤
 *saveLines:    65536
-*cursorBlink:  false
 *bellIsUrgent: true
+*cursorBlink:  false
 ! ──────────────────────────────────────────────────────────────────── xterm ──┤
 xterm*faceName:          <%= local! :xft_font %>
 xterm*utf8:              2
@@ -163,8 +171,10 @@ Xmessage*Form*?*foreground:       #668799
 Xmessage*background:              #151515
 Xmessage*foreground:              #888888
 
-Xmessage*defaultButton:       okay
+Xmessage*defaultButton: okay
 
 Xmessage*international: true
 ! ─────────────────────────────────────────────────────────────────────────────┘
 
+
+! vim: set ft=eruby.xdefaults :
