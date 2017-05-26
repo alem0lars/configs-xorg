@@ -1,4 +1,4 @@
-# => inherits: generic, with-alem0lars-font, with-lodpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
+# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-lodpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
 
 
 # vim: set filetype=eruby.yaml :

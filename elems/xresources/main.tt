@@ -32,7 +32,10 @@
 !                                                                              │
 ! ─────────────────────────────────────────────────────────────────────────────┤
 <% define_locals do
-  variable :dpi,                          type: :integer?
+  variable :dpi, type: :integer?
+
+  variable :"cursor.name", type: :string?, as: :cursor_name
+
   variable :"colorscheme.name",           type: :string?, as: :colorscheme_name
   variable :"xorg.xresources.custom_dir", type: :directory?, as: :custom_dir
   variable :"fonts.main.name",            type: :string, as: :font_name
@@ -67,13 +70,16 @@ Xft*rgba:      rgb
 #include "<%= local! :colorscheme_path %>"
 <% end -%>
 ! ────────────────────────────────────────────────────────────────── Xcursor ──┤
-xcursor.theme: pearlgrey
+<% if local? :cursor_name %>
+Xcursor*theme: pearlgrey
+<% end %>
+
 <% if !local?(:dpi) || local!(:dpi) < 100 %>
-xcursor.size: 24
+Xcursor*size: 24
 <% elsif local!(:dpi) < 180 %>
-xcursor.size: 32
+Xcursor*size: 48
 <% else %>
-xcursor.size: 48
+Xcursor*size: 96
 <% end %>
 ! ────────────────────────────────────────────────── Cross-terminal settings ──┤
 *saveLines:    65536
@@ -99,7 +105,7 @@ urxvt*iso14755_52:    false
 urxvt*matcher.button: 1
 urxvt*cutchars:       ()*,<>[]{}|`""''
 ! URLs style.
-urxvt.underlineURLs: true
+urxvt*underlineURLs: true
 ! Pseudo-transparency.
 urxvt*shading:     50
 urxvt*transparent: false
