@@ -1,20 +1,4 @@
-# => inherits: generic, system-level, wacom, with-urxvt <= #
-
-
-xorg:
-  main_video_card:
-    driver: intel
-
-fonts:
-  main:
-    name: Hack
-    size: 11
-
-urxvt:
-  url_launcher: firefox
-
-colorscheme:
-  name: jellybeans
+# => inherits: generic, with-alem0lars-font, with-hidpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
 
 
 # vim: set filetype=eruby.yaml :

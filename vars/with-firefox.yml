@@ -1,0 +1,5 @@
+urxvt:
+  url_launcher: firefox
+
+
+# vim: set filetype=eruby.yaml :
