@@ -71,16 +71,16 @@ Xft*rgba:      rgb
 <% end -%>
 ! ────────────────────────────────────────────────────────────────── Xcursor ──┤
 <% if local? :cursor_name %>
-Xcursor*theme: pearlgrey
+Xcursor*theme: <%= local! :cursor_name %>
 <% end %>
 
 <% if !local?(:dpi) || local!(:dpi) < 100 %>
-Xcursor*size: 24
-<% elsif local!(:dpi) < 180 %>
-Xcursor*size: 48
+Xcursor*size: 16
 <% else %>
-Xcursor*size: 96
+Xcursor*size: 32
 <% end %>
+
+Xcursor*theme_core: true
 ! ────────────────────────────────────────────────── Cross-terminal settings ──┤
 *saveLines:    65536
 *bellIsUrgent: true
