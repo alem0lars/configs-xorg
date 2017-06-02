@@ -77,7 +77,7 @@ Xcursor*theme: <%= local! :cursor_name %>
 <% if !local?(:dpi) || local!(:dpi) < 100 %>
 Xcursor*size: 16
 <% else %>
-Xcursor*size: 32
+Xcursor*size: 24
 <% end %>
 
 Xcursor*theme_core: true
