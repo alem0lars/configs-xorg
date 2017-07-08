@@ -1,4 +1,6 @@
 # => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
 
+xorg:
+  default_session: xmonad
 
 # vim: set filetype=eruby.yaml :
