@@ -34,13 +34,13 @@
 <% define_locals do
   variable :dpi, type: :integer?
 
-  variable :"cursor.name", type: :string?, as: :cursor_name
+  variable "cursor.name", type: :string?, as: :cursor_name
 
-  variable :"colorscheme.name",           type: :string?, as: :colorscheme_name
-  variable :"xorg.xresources.custom_dir", type: :directory?, as: :custom_dir
-  variable :"fonts.main.name",            type: :string, as: :font_name
-  variable :"fonts.main.size",            type: :string, as: :font_size
-  variable :"urxvt.url_launcher",         type: :string?, as: :urxvt_url_launcher
+  variable "colorscheme.name",           type: :string?, as: :colorscheme_name
+  variable "xorg.xresources.custom_dir", type: :directory?, as: :custom_dir
+  variable "fonts.main.name",            type: :string, as: :font_name
+  variable "fonts.main.size",            type: :string, as: :font_size
+  variable "urxvt.url_launcher",         type: :string?, as: :urxvt_url_launcher
 
   computed(:colorscheme_path) do
     if local? :custom_dir, :colorscheme_name
@@ -101,6 +101,7 @@ xterm*toolBar:           false
 <% if has_feature? :urxvt %>
 ! Terminal informations.
 urxvt*termName:       rxvt-256color
+urxvt.letterSpace:    1
 urxvt*iso14755_52:    false
 urxvt*matcher.button: 1
 urxvt*cutchars:       ()*,<>[]{}|`""''
