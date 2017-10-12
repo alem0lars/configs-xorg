@@ -101,7 +101,7 @@ xterm*toolBar:           false
 <% if has_feature? :urxvt %>
 ! Terminal informations.
 urxvt*termName:       rxvt-256color
-urxvt.letterSpace:    1
+urxvt*letterSpace:    -1
 urxvt*iso14755_52:    false
 urxvt*matcher.button: 1
 urxvt*cutchars:       ()*,<>[]{}|`""''
