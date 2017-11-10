@@ -2,7 +2,7 @@
 
 
 xorg:
-  default_session: xmonad
+  default_session: i3
 
 
 # vim: set filetype=eruby.yaml :
