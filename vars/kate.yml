@@ -1,4 +1,4 @@
-# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-chromium, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
+# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
 
 
 xorg:
