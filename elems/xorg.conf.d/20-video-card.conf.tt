@@ -32,11 +32,14 @@
 # ─────────────────────────────────────────────────────────────────────────────┤
 <% define_locals do
   prefixed(:"xorg.main_video_card.") do
-    variable :driver,      type: :string
-    variable :vbe_restore, type: :bool?
+    variable :driver,       type: :string
+    variable :vbe_restore,  type: :bool?
+    variable :accel_method, type: :string
+    variable :dri,          type: :string
   end
 end %>
 # ─────────────────────────────────────────────────────────────────────────────┘
+
 
 Section "Device" # Main video card.
   Identifier "Generic Video Card"
@@ -45,6 +48,15 @@ Section "Device" # Main video card.
   <% if local? :vbe_restore %>
   Option "VBERestore" "<%= local! :vbe_restore %>"
   <% end %>
+
+  <% if local? :accel_method %>
+  Option "AccelMethod" "<%= local! :accel_method %>"
+  <% end %>
+
+  <% if local? :dri %>
+  Option "DRI" "<%= local! :dri %>"
+  <% end %>
 EndSection
+
 
 # vim: set filetype=eruby.xf86conf :
