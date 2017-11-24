@@ -40,7 +40,6 @@
 end %>
 # ─────────────────────────────────────────────────────────────────────────────┘
 
-
 Section "Device" # Main video card.
   Identifier "Generic Video Card"
   Driver     "<%= local! :driver %>"

@@ -1,8 +1,7 @@
 xorg:
   main_video_card:
-    driver: modesetting # intel
-    accel_method: glamor
-    dri: 3
+    driver: intel
+    accel_method: sna
 
 
 # vim: set filetype=eruby.yaml :
