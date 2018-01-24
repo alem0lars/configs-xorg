@@ -1,8 +1,11 @@
-# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card, wacom, with-urxvt <= #
+# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card <= #
 
 
 xorg:
   default_session: i3
+
+features:
+  - i3
 
 
 # vim: set filetype=eruby.yaml :
