@@ -12,15 +12,12 @@ do
 done
 
 userresources="${HOME}/.Xresources"
-usermodmap="${HOME}/.Xmodmap"
 userxkbmap="${HOME}/.Xkbmap"
 
 sysresources=/etc/X11/Xresources
-sysmodmap=/etc/X11/Xmodmap
 sysxkbmap=/etc/X11/Xkbmap
 
 rh6sysresources=/etc/X11/xinit/Xresources
-rh6sysmodmap=/etc/X11/xinit/Xmodmap
 
 # merge in defaults
 if [ -f "${rh6sysresources}" ]; then
@@ -56,21 +53,6 @@ if [ -z "$XKB_IN_USE" -a ! -L /etc/X11/X ]; then
       setxkbmap -symbols "$xkbsymbols"
       XKB_IN_USE=yes
     fi
-  fi
-fi
-
-# xkb and xmodmap don't play nice together
-if [ -z "$XKB_IN_USE" ]; then
-  if [ -f "$rh6sysmodmap" ]; then
-    xmodmap "$rh6sysmodmap"
-  fi
-
-  if [ -f "$sysmodmap" ]; then
-    xmodmap "$sysmodmap"
-  fi
-
-  if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
   fi
 fi
 

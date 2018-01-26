@@ -36,6 +36,7 @@ Section "InputClass"
   Identifier "Keyboard Defaults"
   MatchIsKeyboard "yes"
   Option "XkbVariant" "altgr-intl"
+  Option "XkbOptions" "ctrl:nocaps"
 EndSection
 
 
