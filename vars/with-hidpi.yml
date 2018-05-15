@@ -2,7 +2,7 @@ dpi: 192
 
 fonts:
   main:
-    size: 9
+    size: 8
 
 
 # vim: set filetype=eruby.yaml :

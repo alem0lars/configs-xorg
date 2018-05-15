@@ -1,4 +1,4 @@
-# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-firefox, with-colorscheme-jellybeans, system-level, with-intel-video-card <= #
+# => inherits: generic, with-alem0lars-cursor, with-alem0lars-font, with-hidpi, with-chromium, with-colorscheme-jellybeans, system-level, with-intel-video-card, with-urxvt <= #
 
 
 xorg:
@@ -6,6 +6,7 @@ xorg:
 
 features:
   - i3
+  - systemd
 
 
 # vim: set filetype=eruby.yaml :
