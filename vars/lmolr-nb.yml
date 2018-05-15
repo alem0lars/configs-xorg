@@ -1,0 +1,16 @@
+# => inherits: generic, system-level, with-hidpi, with-intel-video-card, with-chromium, with-urxvt, with-colorscheme-jellybeans <= #
+
+
+xorg:
+  default_session: i3
+cursor:
+  name: 'DMZ (Black)'
+font:
+  name: 'Hack'
+
+features:
+  - i3
+  - systemd
+
+
+# vim: set filetype=eruby.yaml :
