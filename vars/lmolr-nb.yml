@@ -5,8 +5,9 @@ xorg:
   default_session: i3
 cursor:
   name: 'DMZ (Black)'
-font:
-  name: 'Hack'
+fonts:
+  main:
+    name: 'Hack'
 
 features:
   - i3
