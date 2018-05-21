@@ -7,7 +7,7 @@ cursor:
   name: 'DMZ (Black)'
 fonts:
   main:
-    name: 'Hack'
+    name: 'Noto'
 
 features:
   - i3
