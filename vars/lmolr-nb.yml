@@ -8,7 +8,7 @@ cursor:
 fonts:
   main:
     name: 'Noto Sans Mono'
-    size: 10
+    size: 12
 
 features:
   - i3
