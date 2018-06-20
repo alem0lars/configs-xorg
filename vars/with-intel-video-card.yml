@@ -1,7 +1,9 @@
 xorg:
   main_video_card:
     driver: intel
-    accel_method: sna
+    # `uxa` avoids glitches in electron-based applications.      
+    # ref: https://github.com/atom/atom/issues/10714
+    accel_method: uxa
 
 
 # vim: set filetype=eruby.yaml :
