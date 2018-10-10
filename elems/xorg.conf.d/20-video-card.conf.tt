@@ -59,12 +59,12 @@ Section "Device" # Main video card.
   <% if has_feature? :displaylink %>
   # YES I KNOW, THIS SEEMS THE VERY OLD DAYS WHERE YOU HAD TO PUT F*CKING
   # OPTIONS TO MAKE DISPLAYS AND DRIVERS WORK :<
+  # THIS IS D A R K M A G I C !!
   Option "TearFree" "true"
   Option "TripleBuffer" "true"
-  Option "MigrationHeuristic" "greedy"
   Option "Tiling" "true"
-  Option "ExaNoComposite" "false"
-  Option "Pageflip" "true"
+  Option "Pageflip" "false"
+  Option "SwapBuffersWait" "true"
   <% end %>
 EndSection
 
