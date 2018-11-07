@@ -48,7 +48,9 @@ Section "Device" # Main video card.
   Option "VBERestore" "<%= local! :vbe_restore %>"
   <% end %>
 
-  <% if local? :accel_method %>
+  <% if has_feature? :displaylink %>
+  Option "AccelMethod" "sna" # DisplayLink only works with SNA
+  <% elsif local? :accel_method %>
   Option "AccelMethod" "<%= local! :accel_method %>"
   <% end %>
 
@@ -64,7 +66,7 @@ Section "Device" # Main video card.
   Option "TripleBuffer" "true"
   Option "Tiling" "true"
   Option "Pageflip" "false"
-  Option "SwapBuffersWait" "true"
+  #Option "SwapBuffersWait" "true"
   <% end %>
 EndSection
 
