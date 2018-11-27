@@ -3,7 +3,7 @@ xorg:
     driver: intel
     # `uxa` avoids glitches in electron-based applications.
     # ref: https://github.com/atom/atom/issues/10714
-    accel_method: sna
+    accel_method: uxa
 
 
 # vim: set filetype=eruby.yaml :

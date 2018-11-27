@@ -70,9 +70,9 @@ fi
 
 touch ~/.i3-errors
 <% if has_feature? :systemd %>
-exec /usr/bin/i3 >> ~/.i3-errors 2>&1
+exec /usr/bin/i3 >> ~/.i3-errors 2>&1 < /dev/null
 <% else %>
-exec ck-launch-session /usr/bin/i3 >> ~/.i3-errors 2>&1
+exec ck-launch-session /usr/bin/i3 >> ~/.i3-errors 2>&1 < /dev/null
 <% end %>
 
 
