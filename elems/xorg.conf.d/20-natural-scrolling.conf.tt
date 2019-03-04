@@ -1,8 +1,8 @@
 # ─────────────────────────────────────────────────────────────────────────────┐
 #                                                                              │
 # File informations:                                                           │
-# - Name:    elems/xorg.conf.d/20-video-card.conf.tt                           │
-# - Summary: Configuration for the (main) video card.                          │
+# - Name:    elems/xorg.conf.d/20-keyboard.conf.tt                             │
+# - Summary: Configuration for the keyboard.                                   │
 # - Authors:                                                                   │
 #   - Alessandro Molari <molari.alessandro@gmail.com> (alem0lars)              │
 #                                                                              │
@@ -29,45 +29,16 @@
 # See the License for the specific language governing permissions and          │
 # limitations under the License.                                               │
 #                                                                              │
-# ─────────────────────────────────────────────────────────────────────────────┤
-<% define_locals do
-  prefixed(:"xorg.main_video_card.") do
-    variable :driver,       type: :string
-    variable :vbe_restore,  type: :bool?
-    variable :accel_method, type: :string?
-    variable :dri,          type: :string
-  end
-end %>
 # ─────────────────────────────────────────────────────────────────────────────┘
 
-Section "Device" # Main video card.
-  Identifier "Generic Video Card"
-  Driver     "<%= local! :driver %>"
 
-  <% if local? :vbe_restore %>
-  Option "VBERestore" "<%= local! :vbe_restore %>"
-  <% end %>
-
-  <% if has_feature? :displaylink %>
-  Option "AccelMethod" "sna" # DisplayLink only works with SNA
-  <% elsif local? :accel_method %>
-  Option "AccelMethod" "<%= local! :accel_method %>"
-  <% end %>
-
-  <% if local? :dri %>
-  Option "DRI" "<%= local! :dri %>"
-  <% end %>
-
-  <% if has_feature? :displaylink %>
-  # YES I KNOW, THIS SEEMS THE VERY OLD DAYS WHERE YOU HAD TO PUT F*CKING
-  # OPTIONS TO MAKE DISPLAYS AND DRIVERS WORK :<
-  # THIS IS D A R K M A G I C !!
-  Option "TearFree" "true"
-  Option "TripleBuffer" "true"
-  Option "Tiling" "true"
-  Option "Pageflip" "false"
-  #Option "SwapBuffersWait" "true"
-  <% end %>
+Section "InputClass"
+  Identifier "Natural Scrolling"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Option "VertScrollDelta" "-1"
+  Option "HorizScrollDelta" "-1"
+  Option "DialDelta" "-1"
 EndSection
 
 

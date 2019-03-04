@@ -108,7 +108,7 @@ urxvt*cutchars:       ()*,<>[]{}|`""''
 ! URLs style.
 urxvt*underlineURLs: true
 ! Pseudo-transparency.
-urxvt*shading:     40
+urxvt*shading:     20
 urxvt*transparent: true
 ! Font.
 urxvt*font:           <%= local! :xft_font %>
